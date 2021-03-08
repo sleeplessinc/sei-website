@@ -2,7 +2,6 @@ import React from 'react';
 import Col from 'react-bootstrap/esm/Col';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
-import pup_401 from '../images/401-pup.webp';
 
 interface IErrorPageProps {
   title: string;
@@ -14,7 +13,11 @@ const ErrorPage: React.FC<IErrorPageProps> = ({ title, message }: IErrorPageProp
     <Container>
       <Row className="align-items-center m-5">
         <Col md={4}>
-          <img src={pup_401} width="100%" height="auto" />
+          <img
+            src="https://storage.googleapis.com/se-website-fe4a4.appspot.com/images/general/401-pup.webp"
+            width="100%"
+            height="auto"
+          />
         </Col>
         <Col md={8} className="text-secondary mb-2 align-self-center">
           <h1>{title}</h1>
