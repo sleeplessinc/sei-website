@@ -1,0 +1,35 @@
+{
+  "rules": {
+    "blog": {
+      ".read": "true",
+      ".write": "auth.admin === true || auth.editor === true"
+    },
+    "communities": {
+      ".read": "true",
+      ".write": "auth.admin === true || auth.editor === true",
+      ".validate": "newData.hasChildren(['description', 'logo', 'title', 'url'])"
+    },
+    "creators": {
+      ".read": "true",
+      ".write": "auth.admin === true || auth.editor === true",
+      ".validate": "newData.hasChildren(['description', 'logo', 'title', 'url'])"
+    },
+    "resources": {
+      ".read": "true",
+      ".write": "auth.admin === true || auth.editor === true",
+      ".validate": "newData.hasChildren(['description', 'logo', 'title', 'url'])"
+    },
+    "page-details": {
+      ".read": "true",
+      ".write": "auth.admin === true || auth.editor === true"
+    },
+    "pages": {
+      ".read": "true",
+      ".write": "auth.admin === true || auth.editor === true"
+    },
+    "settings": {
+      ".read": "true",
+      ".write": "auth.admin === true"
+    }
+  }
+}
