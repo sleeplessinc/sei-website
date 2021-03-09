@@ -1,9 +1,10 @@
-h1,
-h2 {
-  font-family: 'Montserrat', sans-serif;
-}
-
 * {
   font-family: 'Barlow', 'Helvetica';
   font-weight: 500;
+}
+
+h1,
+h2,
+montserrat {
+  font-family: 'Montserrat', sans-serif;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav } from 'react-bootstrap';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 interface ScrollState {
   prevScrollpos: number;
@@ -32,6 +32,15 @@ const Navigation: React.FC = () => {
 
   return (
     <Navbar bg="dark" variant="dark" fixed={location}>
+      <Navbar.Brand as={Link} to="/" className="montserrat">
+        <img
+          alt="logo"
+          src={process.env.PUBLIC_URL + '/img/logo_app.webp'}
+          width="55"
+          height="auto"
+          className="d-inline-block align-middle mr-2"
+        />
+      </Navbar.Brand>
       <Navbar.Collapse className="justify-content-end">
         <Nav>
           <Nav.Link href="https://facebook.com/501c3forSE" target="blank" className="d-inline">
