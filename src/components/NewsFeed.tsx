@@ -30,7 +30,7 @@ const NewsFeed: React.FC = () => {
   const newsCards = newsItems?.map((news, i) => {
     return (
       <div key={news.title} className="ml-4">
-        <h4>{news.title}</h4>
+        <h2>{news.title}</h2>
         <small>
           <p>{'Published ' + formatDistance(new Date(news.published), new Date()) + ' ago'}</p>
         </small>
@@ -43,7 +43,7 @@ const NewsFeed: React.FC = () => {
 
   return (
     <Container>
-      <h2 className="mb-3">News</h2>
+      <h1 className="mb-3">News</h1>
       {isLoading ? (
         <div className="text-center">
           <Spinner className="m-5" animation="border" role="status" variant="primary">

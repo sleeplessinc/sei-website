@@ -54,7 +54,7 @@ const MainPage: React.FC = () => {
         style={{ width: '100%', height: 'auto' }}
       />
       <Container>
-        <h2 className="my-3">Welcome to Street Epistemology International</h2>
+        <h1 className="my-3">Welcome to Street Epistemology International</h1>
         <p>
           Street Epistemology International is a 501(c)(3) non-profit whose mission is to encourage and normalize
           critical thinking and skepticism while providing people around the world with the resources needed to develop
@@ -65,7 +65,7 @@ const MainPage: React.FC = () => {
       <NewsFeed />
       <hr />
       <Container>
-        <h2 className="mb-3">Donate</h2>
+        <h1 className="mb-3">Donate</h1>
         <p>
           Anyone can make a contribution (tax-deductible for US residents only) to Street Epistemology International
           here:
@@ -110,7 +110,7 @@ const MainPage: React.FC = () => {
       </Container>
       <hr />
       <Container>
-        <h2 className="mb-3">Purpose</h2>
+        <h1 className="mb-3">Purpose</h1>
         <p>
           Street Epistemology International (SEI) is a 501(c)(3) non-profit organization that was officially recognized
           as a tax-exempt entity by the United States Federal Government in May 2019.
@@ -130,7 +130,7 @@ const MainPage: React.FC = () => {
       </Container>
       <hr />
       <Container>
-        <h2 className="mb-3">Organization</h2>
+        <h1 className="mb-3">Organization</h1>
         <p>
           <strong>Founding Executive Director:</strong> Anthony Magnabosco
         </p>
@@ -140,7 +140,7 @@ const MainPage: React.FC = () => {
       </Container>
       <hr />
       <Container>
-        <h2 className="mb-3">Contact Us</h2>
+        <h1 className="mb-3">Contact Us</h1>
         <p>
           Contact Us Street Epistemology International 17503 La Cantera Parkway, Suite 104-497 San Antonio, Texas 78257
         </p>

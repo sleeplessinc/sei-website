@@ -62,7 +62,7 @@ const ContentPage: React.FC<IContentPageProps> = ({ path, showAttribution }: ICo
           {details && (
             <Row>
               <Col>
-                <h2 className="mt-3">{details?.title}</h2>
+                <h1 className="mt-3">{details?.title}</h1>
                 <p>
                   <i>{details?.blurb}</i>
                 </p>
