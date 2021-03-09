@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "se-website-fe4a4"
+  },
+  "targets": {
+    "se-website-fe4a4": {
+      "hosting": {
+        "sei-prod": [
+          "sei-prod"
+        ]
+      }
+    }
   }
 }
