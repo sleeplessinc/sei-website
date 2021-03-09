@@ -32,18 +32,6 @@ const Navigation: React.FC = () => {
 
   return (
     <Navbar bg="dark" variant="dark" fixed={location}>
-      <Navbar.Brand as={HashLink} to="/#top" className="montserrat">
-        <img
-          alt=""
-          src={process.env.PUBLIC_URL + '/img/logo_app.webp'}
-          width="55"
-          height="auto"
-          className="d-inline-block align-middle mr-2"
-        />
-        <div className="d-inline">
-          <span className="d-none d-sm-inline-block">Street Epistemology</span>
-        </div>
-      </Navbar.Brand>
       <Navbar.Collapse className="justify-content-end">
         <Nav>
           <Nav.Link href="https://facebook.com/501c3forSE" target="blank" className="d-inline">
