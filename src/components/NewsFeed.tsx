@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/esm/Container';
 import News from '../models/News';
 import { FirebaseContext } from '../firebase';
-import { Spinner } from 'react-bootstrap';
+import { Pagination, Spinner } from 'react-bootstrap';
 import { formatDistance } from 'date-fns';
 import useStateWithLocalStorage from '../utils/storage';
 import { Link } from 'react-router-dom';
 
 const NewsFeed: React.FC = () => {
   const firebaseContext = React.useContext(FirebaseContext);
+  const itemsPerPage = 6;
   const [newsJson, setNewsJson] = useStateWithLocalStorage('news');
   const [isLoading, setIsLoading] = useState(true);
+  const [activePage, setActivePage] = useState(1);
 
   useEffect(() => {
     return firebaseContext?.subscribeToNews(
@@ -27,7 +29,18 @@ const NewsFeed: React.FC = () => {
 
   const newsItems: News[] = newsJson ? JSON.parse(newsJson) : [];
   const newsCount = newsItems.length;
-  const newsCards = newsItems?.map((news, i) => {
+  const pageCount = Math.ceil(newsCount / itemsPerPage);
+  const pages: Array<JSX.Element> = [];
+  for (let number = 1; number <= pageCount; number++) {
+    pages.push(
+      <Pagination.Item key={number} active={number === activePage} onClick={() => handlePageClick(number)}>
+        {number}
+      </Pagination.Item>,
+    );
+  }
+
+  const startIndex = (activePage - 1) * itemsPerPage;
+  const newsCards = newsItems.slice(startIndex, startIndex + itemsPerPage)?.map((news, i) => {
     return (
       <div key={news.title} className="ml-4">
         <h2>{news.title}</h2>
@@ -41,6 +54,20 @@ const NewsFeed: React.FC = () => {
     );
   });
 
+  const handlePageClick = (target: number | 'first' | 'last' | 'next' | 'previous') => {
+    if (target === 'first') {
+      setActivePage(1);
+    } else if (target === 'last') {
+      setActivePage(pageCount);
+    } else if (target === 'previous') {
+      setActivePage(Math.max(1, activePage - 1));
+    } else if (target === 'next') {
+      setActivePage(Math.min(pageCount, activePage + 1));
+    } else {
+      setActivePage(target);
+    }
+  };
+
   return (
     <Container>
       <h1 className="mb-3">News</h1>
@@ -53,6 +80,13 @@ const NewsFeed: React.FC = () => {
       ) : (
         newsCards
       )}
+      <Pagination className="justify-content-center">
+        <Pagination.First onClick={() => handlePageClick('first')} />
+        <Pagination.Prev onClick={() => handlePageClick('previous')} />
+        {pages}
+        <Pagination.Next onClick={() => handlePageClick('next')} />
+        <Pagination.Last onClick={() => handlePageClick('last')} />
+      </Pagination>
     </Container>
   );
 };
