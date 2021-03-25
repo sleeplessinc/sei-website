@@ -125,24 +125,38 @@ const MainPage: React.FC = () => {
           teach, train, develop, improve, and promote the method while offering fiscal transparency to its donors.
         </p>
         <a href="https://docs.google.com/forms/d/1D4n87RhftLAYuNxMzjPOu4tkgKQM5K4X4n2CC_lp43w/viewform?edit_requested=true">
-          Submit a funding consideration request.
+          Submit a funding consideration request
         </a>
       </Container>
       <hr />
       <Container>
-        <h1 className="mb-3">Organization</h1>
+        <h1 className="mb-3">Board</h1>
         <p>
-          <strong>Founding Executive Director:</strong> Anthony Magnabosco
+          <strong>Executive Director:</strong> Anthony Magnabosco
         </p>
         <p>
-          <strong>Founding Board of Directors:</strong> Reid Nicewonder (President), Timothy Dawson (Vice-President)
+          <strong>President:</strong> Reid Nicewonder
+        </p>
+        <p>
+          <strong>Vice-President:</strong> Timothy Dawson
+        </p>
+        <p>
+          <strong>Secretary:</strong> Linda Mokko
         </p>
       </Container>
       <hr />
       <Container>
         <h1 className="mb-3">Contact Us</h1>
         <p>
-          Contact Us Street Epistemology International 17503 La Cantera Parkway, Suite 104-497 San Antonio, Texas 78257
+          Street Epistemology International
+          <br />
+          17503 La Cantera Parkway
+          <br />
+          Suite 104-497
+          <br />
+          San Antonio
+          <br />
+          Texas 78257
         </p>
         <p>EIN 83-4404993</p>
         <p>
