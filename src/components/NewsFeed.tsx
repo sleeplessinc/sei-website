@@ -36,13 +36,13 @@ const NewsFeed: React.FC = () => {
   const newsCards = newsItems.slice(startIndex, startIndex + itemsPerPage)?.map((news, i) => {
     return (
       <div key={news.title} className="ml-4">
+        <hr />
         <h2>{news.title}</h2>
         <small>
           <p>{'Published ' + formatDistance(new Date(news.published), new Date()) + ' ago'}</p>
         </small>
         <p>{news.blurb}</p>
         <Link to={'news/' + news.key}>READ MORE</Link>
-        {newsCount == i + 1 ? null : <hr />}
       </div>
     );
   });
@@ -82,7 +82,7 @@ const NewsFeed: React.FC = () => {
       pages.push(getPageElement(pageCount, 5));
     } else if (activePage >= pageCount - 2) {
       pages.push(getPageElement(1));
-      pages.push(<Pagination.Ellipsis key={2} onClick={() => handlePageClick(4)} />);
+      pages.push(<Pagination.Ellipsis key={2} onClick={() => handlePageClick(2)} />);
       pages.push(getPageElement(pageCount - 2, 3));
       pages.push(getPageElement(pageCount - 1, 4));
       pages.push(getPageElement(pageCount, 5));
@@ -97,6 +97,7 @@ const NewsFeed: React.FC = () => {
 
   return (
     <Container>
+      <h1 className="mb-3">News</h1>
       <Pagination className="justify-content-center">
         <Pagination.First onClick={() => handlePageClick('first')} />
         <Pagination.Prev onClick={() => handlePageClick('previous')} />
@@ -104,7 +105,6 @@ const NewsFeed: React.FC = () => {
         <Pagination.Next onClick={() => handlePageClick('next')} />
         <Pagination.Last onClick={() => handlePageClick('last')} />
       </Pagination>
-      <h1 className="mb-3">News</h1>
       {isLoading ? (
         <div className="text-center">
           <Spinner className="m-5" animation="border" role="status" variant="primary">
