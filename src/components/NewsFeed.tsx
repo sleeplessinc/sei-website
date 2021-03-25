@@ -33,7 +33,7 @@ const NewsFeed: React.FC = () => {
   const pages: Array<JSX.Element> = [];
 
   const startIndex = (activePage - 1) * itemsPerPage;
-  const newsCards = newsItems.slice(startIndex, startIndex + itemsPerPage)?.map((news, i) => {
+  const newsCards = newsItems.slice(startIndex, startIndex + itemsPerPage)?.map((news) => {
     return (
       <div key={news.title} className="ml-4">
         <hr />
